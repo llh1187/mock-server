@@ -1,0 +1,19 @@
+{
+  "header": {
+    "utmSource": "",
+    "os": "Win32",
+    "wxCode": "oJXA3sxtMFCL_EuPdqz33zziLg7o",
+    "channel": "WS",
+    "errorCode": "0",
+    "errorMsg": "",
+    "senderSN": "1652607750588rywx614",
+    "secondChannel": "",
+    "scope": "2",
+    "wxAuthCode": "xjh",
+    "mpSId": "HMBS_BE435EC505725BCD9D741212DF042FF8_1504901814897057792"
+  },
+  "body": {
+    "bindStatus": "1",
+    "ecifNo": "198010454014"
+  }
+}
