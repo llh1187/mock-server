@@ -1,8 +1,8 @@
 {
-  "name": "mock-server",
+  "name": "mock-server-lo",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "private": false,
   "egg": {
     "declarations": true
   },
@@ -42,5 +42,6 @@
     "url": ""
   },
   "author": "lo",
-  "license": "MIT"
+  "license": "MIT",
+  "main": ".autod.conf.js"
 }
