@@ -1,0 +1,29 @@
+{
+  "header": {
+    "utmsource": "",
+    "os": "Win32",
+    "wxcode": "oJXA3sxtMFCL_EuPdqz33zziLg7o",
+    "channel": "WS",
+    "errorcode": "0",
+    "errormsg": "",
+    "sendersn": "1652607750588rywx614",
+    "secondchannel": "",
+    "scope": "2",
+    "wxauthcode": "xjh",
+    "mpsid": "HMBS_BE435EC505725BCD9D741212DF042FF8_1504901814897057792",
+    "content-type": "application/json; charset=utf-8",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-download-options": "noopen",
+    "x-readtime": "2",
+    "content-length": "42",
+    "date": "Sun, 15 May 2022 13:18:57 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "bindStatus": "1",
+    "ecifNo": "198010454014"
+  }
+}

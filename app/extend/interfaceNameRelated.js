@@ -1,10 +1,11 @@
 'use strict';
-const interfaceEndNameArr = require('../../config/interface');
+const interfaceEndNameArr = require('../../config/interfaceEndName');
 const getOriginUrlFunc = ctx => {
   const { request = {} } = ctx;
   const { originalUrl = {} } = request;
   return originalUrl;
 }
+const url = require("url");
 /**
  * 
  * @param {*} ctx 
@@ -29,4 +30,8 @@ const getName = ctx => {
   const interfaceName = urlWithInterFace.slice(lastIndexSlash+1);
   return interfaceName;
 }
-module.exports = { judgeMatchFlag, getName };
+const getRelativePath = ctx => {
+  const path = ctx.request.url;
+  return path;
+}
+module.exports = { judgeMatchFlag, getName, getRelativePath };

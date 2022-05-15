@@ -15,13 +15,15 @@ class HomeController extends Controller {
     const { ctx = {}, service } = this;
     // 后缀是否匹配
     const matchFlag = judgeMatchFlag(ctx);
-    // 不匹配 走原流程 todo lo 这里怎么走原流程？
-    // todo lo 白名单模式加入 直接转发走
+    // 不匹配 转发请求
     if (!matchFlag) {
       ctx.body = 'hhh todo';
       return;
     }
     // 匹配 走mock流程
+    // todo lo 白名单模式加入 直接转发走
+
+    // 非白名单
     const interfaceName = getName(ctx);
     const res = await service.requestHandler.handleMock(interfaceName);
     const { header, body } = res;
