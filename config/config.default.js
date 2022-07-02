@@ -21,6 +21,7 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    record: true, // 转发请求，并记录在mock中，而不是在mock中取值。
   };
   // 关闭安全校验
   config.security = {

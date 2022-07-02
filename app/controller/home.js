@@ -7,15 +7,11 @@ const { getName, judgeMatchFlag } = util;
  *  2、请求合法，判断文件夹内是否有该接口名字定义的文件 todo lo
  */
 class HomeController extends Controller {
-  async index() {
-    const { ctx } = this;
-    ctx.body = 'hi~';
-  }
   async handleRequest() {
     const { ctx = {}, service } = this;
     // 后缀是否匹配
     const matchFlag = judgeMatchFlag(ctx);
-    // 不匹配 转发请求
+    // 不匹配 转发请求 todo lo
     if (!matchFlag) {
       ctx.body = 'hhh todo';
       return;

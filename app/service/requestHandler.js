@@ -21,8 +21,18 @@ class requestHandler extends Service {
     };
   }
   async getMockData(name) {
-    const { ctx } = this;
+    const { ctx, config } = this;
+    const {record} = config;
     let data = { body: {}, header: {} };
+    // todo lo 怎么拿到config里面的数据？
+    if(record) {
+      const path = getRelativePath(ctx);
+      // 不存在 转发请求
+      data = await this.getRealData(path);
+      // 将请求返回的数据保存在本地mock文件夹下
+      this.writeToFile(name, data);
+      return data;
+    }
     const filePath = path.join(__dirname, `../../mock/${name}.json`);
     try {
       // todo lo 听说用流的性能更好
@@ -41,7 +51,7 @@ class requestHandler extends Service {
   }
   async writeToFile(name, data) {
     const filePath = path.join(__dirname, '../../mock/');
-    fs.writeFile(`${filePath}${name}.json`, JSON.stringify(data, null, 2), { flag: 'a' }, err => {
+    fs.writeFile(`${filePath}${name}.json`, JSON.stringify(data, null, 2), { flag: 'w' }, err => {
       if (err) {
         console.error(err);
         return;
