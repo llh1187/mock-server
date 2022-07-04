@@ -15,7 +15,7 @@ class HomeController extends Controller {
     const matchFlag = judgeMatchFlag(ctx);
     // 不匹配 直接转发请求
     if (!matchFlag) {
-      await ctx.proxyRequest(`${prefix}`, options);
+      await ctx.proxyRequest(`${prefix}`);
       return;
     }
     // 匹配 走mock流程
