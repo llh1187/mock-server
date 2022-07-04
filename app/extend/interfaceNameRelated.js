@@ -1,5 +1,6 @@
 'use strict';
 const interfaceEndNameArr = require('../../config/interfaceEndName');
+const whiteList = require('../../config/whiteList');
 const getOriginUrlFunc = ctx => {
   const { request = {} } = ctx;
   const { originalUrl = {} } = request;
@@ -34,4 +35,7 @@ const getRelativePath = ctx => {
   const path = ctx.request.url;
   return path;
 }
-module.exports = { judgeMatchFlag, getName, getRelativePath };
+const judgeWhileList = name => {
+  return whiteList.includes(name);
+}
+module.exports = { judgeMatchFlag, getName, getRelativePath, judgeWhileList };

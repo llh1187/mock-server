@@ -3,7 +3,7 @@ const Service = require('egg').Service
 const fs = require('fs')
 const path = require("path");
 const util = require('../extend/interfaceNameRelated');
-const { getRelativePath } = util;
+const { getRelativePath, judgeWhileList } = util;
 const prefix = require('../../config/serverUrlConfig').relativeUrl;
 
 class requestHandler extends Service {
@@ -24,8 +24,8 @@ class requestHandler extends Service {
     const { ctx, config } = this;
     const {record} = config;
     let data = { body: {}, header: {} };
-    // todo lo 怎么拿到config里面的数据？
-    if(record) {
+    // 增加白名单模式
+    if(record || judgeWhileList(name)) {
       const path = getRelativePath(ctx);
       // 不存在 转发请求
       data = await this.getRealData(path);

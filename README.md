@@ -1,5 +1,7 @@
 # mock-server
-
+## 配置
+1、config.default.js中 record设置为true，即代表不使用mock中的数据，仅仅转发请求并记录下来。
+2、后缀不匹配的接口，仅仅做转发，不做任何记录。
 
 
 ## QuickStart
