@@ -12,8 +12,8 @@ const url = require("url");
  * @param {*} ctx 
  * @returns flag 判断是否符合后缀
  */
-const judgeMatchFlag = ctx => {
-  const originalUrl = getOriginUrlFunc(ctx);
+const judgeMatchFlag = (ctx, url) => {
+  const originalUrl = url || getOriginUrlFunc(ctx);
   // 获取后缀 正则表达式获取
   const reg = /(.*)\.(.*)/;
   const arr = reg.exec(originalUrl) || [''];

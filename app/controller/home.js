@@ -15,15 +15,7 @@ class HomeController extends Controller {
     const matchFlag = judgeMatchFlag(ctx);
     // 不匹配 直接转发请求
     if (!matchFlag) {
-      const { data } = (await ctx.curl(`${prefix}${ctx.url}`, { streaming: false, retry: 3, timeout: [ 3000, 30000 ] }));
-      const final = data.toString();
-      try {
-        ctx.type = 'json';
-        ctx.body = JSON.parse(final);
-      } catch (ex) {
-        ctx.type = 'html';
-        ctx.bod = final;
-      }
+      await ctx.proxyRequest(`${prefix}`, options);
       return;
     }
     // 匹配 走mock流程

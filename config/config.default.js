@@ -29,6 +29,10 @@ module.exports = appInfo => {
       enable: false,
     },
   };
+  config.httpProxy = {
+    enable: true,
+    package: '@eggjs/http-proxy',
+  };
 
   return {
     ...config,
